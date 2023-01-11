@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Inheritance and Prototype Questions</h1>
+
+    <h3>Qu 1. Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype?</h3>
+<pre>
+    const parent = {
+        firstName: "Satish",
+        lastName: "Kumar",
+        fullName() {
+          return this.firstName + " " + this.lastName;
+        }
+    };
+    const child ={
+          __proto__: parent,
+    };
+    console.log(child.fullName()); 
+</pre>
+<h2>
+    <pre>
+        Output :
+
+        Satish Kumar
+    </pre>
+</h2>
+    <h3>Qu 2. Write code to explain prototype chaining?</h3>
+<pre>
+    function Person() {
+        this.name = 'Satish'
+    }
+    Person.prototype.name = 'singh';
+    Person.prototype.age = 23
+    
+    const newPerson = new Person();
+    
+    console.log(newPerson.name); 
+    console.log(newPerson.age);
+</pre>
+<h2>
+    <pre>
+        Output :
+
+        Satish
+        23
+    </pre>
+</h2>
+    <h3>Qu 3. Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays?</h3>
+ <pre>
+    Array.prototype.sum = function() {
+        let sum = 0;
+              for (let i = 0; i < this.length; i++) 
+                  sum += this[i]; 
+              return sum; 
+    };
+    var arr = [1,2,3,4,8];
+    console.log(arr.sum())
+</pre>
+<h2>
+    <pre>
+        Output :
+
+        18
+    </pre>
+</h2>
+    <h3>Qu 4. Write a JavaScript function to retrieve all the names of object's own and inherited properties?</h3>
+<pre>
+    const parent = {
+        age:23,
+        rollno: 25,
+    };
+    const child ={
+        __proto__: parent,
+        firstName: "Satish",
+        lastName: "Kumar",
+    };
+    for(let prop in child)
+        console.log(prop);
+</pre>
+<h2>
+    <pre>
+        Output :
+
+        firstName
+        lastName
+        age
+        rollno
+    </pre>
+</h2>
+
+</body>
+</html>

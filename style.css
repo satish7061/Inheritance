@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Crete Round', serif;
+}
+body{
+    background-color: aqua;
+    padding: 20px;
+}
+h1{
+    color: rgb(59, 8, 8);
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 30px;
+}
+h2{
+    color: rgb(59, 8, 8);
+    font-weight: bolder;
+    margin: 10px 0px;
+}
+h3{
+    color: brown;
+    font-weight: bolder;
+}
+p,pre{
+    color: rgb(116, 9, 9);
+    margin: 20px;
+}
